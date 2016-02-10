@@ -17,9 +17,9 @@ public class mathControl {
             return -1;}
         if (blade > 2.0 || blade < 0.5){
             return -1;}
-        if (blade + 0.5 >= hilt){
+        if (blade + 0.5 > hilt){
             return -1;}
         
-        return 1;
+        return 1.0;
     }
 }

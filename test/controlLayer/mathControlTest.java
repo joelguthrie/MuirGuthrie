@@ -33,14 +33,49 @@ public class mathControlTest {
     @Test
     public void testBuildLightSaber() {
         System.out.println("buildLightSaber");
+        System.out.println("\ttestCase1");
         double hilt = 2.0;
         double blade = 1.0;
         mathControl instance = new mathControl();
         double expResult = 1.0;
         double result = instance.buildLightSaber(hilt, blade);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+        
+        System.out.println("\ttestCase2");
+        hilt = 1.0;
+        blade = 1.5;
+        expResult = -1.0;
+        result = instance.buildLightSaber(hilt, blade);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase3");
+        hilt = 3.0;
+        blade = 2.5;
+        expResult = -1.0;
+        result = instance.buildLightSaber(hilt, blade);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase4");
+        hilt = 1.5;
+        blade = 1.75;
+        expResult = -1.0;
+        result = instance.buildLightSaber(hilt, blade);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase5");
+        hilt = 1.0;
+        blade = 0.5;
+        expResult = 1.0;
+        result = instance.buildLightSaber(hilt, blade);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase6");
+        hilt = 2.5;
+        blade = 2.0;
+        expResult = 1.0;
+        result = instance.buildLightSaber(hilt, blade);
+        assertEquals(expResult, result, 0.0);
     }
     
 }
