@@ -97,7 +97,7 @@ public class mathControlTest {
         input1 = 87.0;
         input2 = 2.0;
         answer = 5.0;
-        expResult = -1.0;
+        expResult = 0.0;
         result = instance.askDivisionQuestion(input1, input2, answer);
         assertEquals(expResult, result, 0.0);
         
@@ -105,7 +105,7 @@ public class mathControlTest {
         input1 = 6.0;
         input2 = 6.0;
         answer = 2.0;
-        expResult = -1.0;
+        expResult = 0.0;
         result = instance.askDivisionQuestion(input1, input2, answer);
         assertEquals(expResult, result, 0.0);
         
@@ -113,7 +113,7 @@ public class mathControlTest {
         input1 = 7.0;
         input2 = 8.0;
         answer = 5.0;
-        expResult = -1.0;
+        expResult = 0.0;
         result = instance.askDivisionQuestion(input1, input2, answer);
         assertEquals(expResult, result, 0.0);
         

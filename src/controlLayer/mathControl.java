@@ -30,6 +30,6 @@ public class mathControl {
         if (input1 / input2 == answer){
             return 1.0;}
         
-        return -1.0; }
+        return 0.0; }
 }
         
