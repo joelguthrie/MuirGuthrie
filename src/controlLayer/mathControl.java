@@ -22,4 +22,14 @@ public class mathControl {
         
         return 1.0;
     }
+         public double askDivisionQuestion(double input1, double input2, double answer){
+        if (input1 < 1 || input1 > 100){
+            return -1.0;}
+        if (input2 < 1 || input2 > 100){
+            return -1.0;}
+        if (input1 / input2 == answer){
+            return 1.0;}
+        
+        return -1.0; }
 }
+        

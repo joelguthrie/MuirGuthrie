@@ -77,5 +77,61 @@ public class mathControlTest {
         result = instance.buildLightSaber(hilt, blade);
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Test of askDivisionQuestion method, of class mathControl.
+     */
+    @Test
+    public void testAskDivisionQuestion() {
+        System.out.println("askDivisionQuestion");
+        System.out.println("\ttestCase1");
+        double input1 = 25.0;
+        double input2 = 5.0;
+        double answer = 5.0;
+        mathControl instance = new mathControl();
+        double expResult = 1.0;
+        double result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase2");
+        input1 = 87.0;
+        input2 = 2.0;
+        answer = 5.0;
+        expResult = -1.0;
+        result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase3");
+        input1 = 6.0;
+        input2 = 6.0;
+        answer = 2.0;
+        expResult = -1.0;
+        result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase4");
+        input1 = 7.0;
+        input2 = 8.0;
+        answer = 5.0;
+        expResult = -1.0;
+        result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase5");
+        input1 = 5.0;
+        input2 = 5.0;
+        answer = 1.0;
+        expResult = 1.0;
+        result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase6");
+        input1 = 100.0;
+        input2 = 1.0;
+        answer = 100.0;
+        expResult = 1.0;
+        result = instance.askDivisionQuestion(input1, input2, answer);
+        assertEquals(expResult, result, 0.0);
+    }
     
 }
