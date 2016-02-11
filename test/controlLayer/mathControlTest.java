@@ -134,4 +134,65 @@ public class mathControlTest {
         assertEquals(expResult, result, 0.0);
     }
     
+    /**
+     * Test of bossFight method, of class mathControl.
+     */
+    @Test
+    public void testBossFight() {
+        System.out.println("boss fight testing");
+        System.out.println("\ttestCase1");
+        double input1 = 12;
+        double input2 = 6;
+        double input3 = 72;
+        mathControl instance = new mathControl();
+        double expResult = 1;
+        double result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase2");
+        input1 = 8;
+        input2 = 9;
+        input3 = 72;
+        
+        expResult = 1;
+        result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase3");
+        input1 = 1;
+        input2 = 12;
+        input3 = 72;
+        
+        expResult = 0;
+        result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase4");
+        input1 = 8;
+        input2 = 1;
+        input3 = 72;
+        
+        expResult = 0;
+        result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase5");
+        input1 = 100;
+        input2 = 0;
+        input3 = 72;
+        
+        expResult = -1;
+        result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("\ttestCase6");
+        input1 = 0;
+        input2 = 100;
+        input3 = 72;
+        
+        expResult = -1;
+        result = instance.bossFight(input1, input2, input3);
+        assertEquals(expResult, result, 0.0);       
+    }//end of boss finght testing
+    
 }

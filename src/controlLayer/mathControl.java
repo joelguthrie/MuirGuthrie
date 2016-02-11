@@ -31,5 +31,18 @@ public class mathControl {
             return 1.0;}
         
         return 0.0; }
+         
+        public double bossFight (double input1, double input2, double input3) {
+        if (input1 < 1 || input1 > 100){
+		return -1;
+        }
+	if (input2 < 1 || input2 > 100){
+		return -1;
+        }
+	if (input1 * input2 == input3){
+		return 1;
+        }
+		return 0;
+        }
 }
         
