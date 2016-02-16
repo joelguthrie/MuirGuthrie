@@ -44,7 +44,7 @@ public class startProgramView {
         +"                888  888 888888888 88   88     88\n"
         +"                 88  88  88     88 88    8888888\n"
         +"=====================================================================\n"
-	+"			  The Age of Darth Jar-Jar.\n" 
+	+"                    The Age of Darth Jar-Jar.\n" 
         );
         
 
