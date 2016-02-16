@@ -5,6 +5,8 @@
  */
 package starwarsgame;
 
+import ViewLayer.startProgramView;
+
 /**
  *
  * @author Joel
@@ -16,6 +18,8 @@ public class StarWarsGame {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        startProgramView startProgramView = new startProgramView();
+        startProgramView.startProgram();
     }
     
 }
