@@ -5,22 +5,20 @@
  */
 package ViewLayer;
 
-import controlLayer.gameControl;
 import java.util.Scanner;
-import starwarsgame.StarWarsGame;
 
 /**
  *
  * @author MIc
  */
-public class MainMenuView {
-
+public class HelpMenuView {
+    
     private final String MENU ="\n=====================================================================\n"
-        + "\n N - New Game"
-        + "\n L - Load Saved Game"
-        + "\n S - Save Game"
-        + "\n H - Help Menu"
-        + "\n* Q - Quit"
+        + "\n M - How to move through the galaxy"
+        + "\n F - Help finding the lightsaber"
+        + "\n W - What do i need?"
+        + "\n H - How do i win?"
+        + "\n E - Exit"
         +"\n=====================================================================\n";
     
     public void displayMenu() {
@@ -35,7 +33,7 @@ public class MainMenuView {
             
             this.doAction(selection);
             
-        }while (selection != 'Q');
+        }while (selection != 'E');
         
     }
 
@@ -71,50 +69,23 @@ public class MainMenuView {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){
-	            case 'N':
-	                this.startNewGame();
+	            case 'M':
+                        System.out.println("display the move info");
 	                break;
-	            case 'L':
-	                this.startExistingGame();
+	            case 'F':
+	                System.out.println("showing help Lightsaber");
+	                break;
+	            case 'W':
+	                System.out.println("show what you need");
 	                break;
 	            case 'H':
-	                this.displayHelpMenu();
+	                System.out.println("Show How you win the game");
 	                break;
-	            case 'S':
-	                this.saveGame();
-	                break;
-	            case 'Q':
+	            case 'E':
 	                return;
 	            default:
 	                System.out.println("\n **** Invalid Choice. Choose another ******");
 	                break;
 	        }
     }
-
-    private void startNewGame() {
-        System.out.println("the new game fuction was called.");
-        
-        gameControl.creatNewGame(StarWarsGame.getPlayer());
-        
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-        
-    }
-
-    private void startExistingGame() {
-        System.out.println("the load game fuction was called.");
-    }
-
-    private void displayHelpMenu() {
-        System.out.println("the help fuction was called.");
-        HelpMenuView helpMenu = new HelpMenuView;
-        helpMenu.displayMenu();
-    }
-
-    private void saveGame() {
-        System.out.println("the save game fuction was called.");
-    }
-
-    
 }
