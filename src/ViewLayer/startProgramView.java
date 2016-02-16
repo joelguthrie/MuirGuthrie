@@ -5,6 +5,10 @@
  */
 package ViewLayer;
 
+import controlLayer.ProgramControl;
+import java.util.Scanner;
+import modelLayer.PlayerModel;
+
 /**
  *
  * @author MIc
@@ -17,10 +21,10 @@ public class startProgramView {
         this.displayBanner();
         
         //get the players name
-        
+        String playersName = this.getplayerName();
         
         //make a new player
-        
+        PlayerModel player = ProgramControl.createPlayer(playersName);
         
         //display the welcome message
         
@@ -50,6 +54,33 @@ public class startProgramView {
 
                                           
     }
+
+    private String getplayerName() {
+        
+        boolean valid = false;
+        String playerName = null;
+        Scanner keyboard = new Scanner(System.in);
+        
+        while (!valid){
+            
+            System.out.println("Enter your name:");
+            
+            playerName = keyboard.nextLine();
+            playerName = playerName.trim();
+            if (playerName.length() < 2){
+                
+                System.out.println("name length must be longer then 2 characters, try again.");
+                continue;
+                
+            }
+            
+            break;
+            
+        }
+        
+        return playerName;
+    }
+    
     
 }
 
