@@ -7,7 +7,7 @@ package ViewLayer;
 
 import controlLayer.ProgramControl;
 import java.util.Scanner;
-import modelLayer.PlayerModel;
+import modelLayer.Player;
 
 /**
  *
@@ -24,13 +24,14 @@ public class startProgramView {
         String playersName = this.getplayerName();
         
         //make a new player
-        PlayerModel player = ProgramControl.createPlayer(playersName);
+        Player player = ProgramControl.createPlayer(playersName);
         
         //display the welcome message
-        
+        this.displayWelcomeMessage(player);
         
         //show the main menu
-        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
         
     }
 
@@ -79,6 +80,17 @@ public class startProgramView {
         }
         
         return playerName;
+    }
+
+    private void displayWelcomeMessage(Player player) {
+        
+        System.out.println("=====================================================================\n");
+        System.out.println("              wellcome to the realm of Darth Jar Jar\n");
+        System.out.println("              " + player.getName() + " has been called to defend\n");
+        System.out.println("              the universe from this theret from this\n");
+        System.out.println("              and now you will have to find teachers \n");
+        System.out.println("              to train in the ways of the force.     \n");
+        System.out.println("=====================================================================\n");
     }
     
     

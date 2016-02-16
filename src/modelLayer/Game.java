@@ -11,12 +11,12 @@ import java.io.Serializable;
  *
  * @author MIc
  */
-public class GameModel implements Serializable{
+public class Game implements Serializable{
     
     //varables
     private double totalTime;
 
-    public GameModel(double totalTime) {
+    public Game(double totalTime) {
         this.totalTime = totalTime;
     }
 

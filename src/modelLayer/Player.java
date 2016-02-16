@@ -11,15 +11,29 @@ import java.io.Serializable;
  *
  * @author MIc
  */
-public class PlayerModel implements Serializable{
+public class Player implements Serializable{
     
     //varables
     private double coordinates;
     private String inventory;
 
-    public PlayerModel(double coordinates, String inventory) {
+    public Player(double coordinates, String inventory) {
         this.coordinates = coordinates;
         this.inventory = inventory;
+    }
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public Player() {
+        
     }
 
     public double getCoordinates() {

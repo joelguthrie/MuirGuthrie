@@ -5,7 +5,8 @@
  */
 package controlLayer;
 
-import modelLayer.PlayerModel;
+import modelLayer.Player;
+import starwarsgame.StarWarsGame;
 
 /**
  *
@@ -13,11 +14,17 @@ import modelLayer.PlayerModel;
  */
 public class ProgramControl {
 
-    public static PlayerModel createPlayer(String playersName) {
-        
-        System.out.println("\n*****player creat function called*****");
-        return null;
-        
+    public static Player createPlayer(String name) {
+            
+            if (name == null){
+                return null;
+            }
+            Player player = new Player();
+            player.setName(name);
+            
+            StarWarsGame.setPlayer(player);
+            return player;
+            
     }
  
     

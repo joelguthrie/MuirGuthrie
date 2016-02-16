@@ -6,6 +6,8 @@
 package starwarsgame;
 
 import ViewLayer.startProgramView;
+import modelLayer.Game;
+import modelLayer.Player;
 
 /**
  *
@@ -13,6 +15,26 @@ import ViewLayer.startProgramView;
  */
 public class StarWarsGame {
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        StarWarsGame.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        StarWarsGame.player = player;
+    }
+
+    private static Game currentGame = null;
+    
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
@@ -22,4 +44,5 @@ public class StarWarsGame {
         startProgramView.startProgram();
     }
     
+
 }

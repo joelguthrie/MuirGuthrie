@@ -9,8 +9,12 @@ package ViewLayer;
  *
  * @author MIc
  */
-public class mainMenu {
+public class GameMenuView {
+ 
     
-    
+
+    void displayMenu() {
+        System.out.println("the display Menu fuction was called.");
+    }
     
 }

@@ -5,10 +5,16 @@
  */
 package controlLayer;
 
+import modelLayer.Player;
+
 /**
  *
  * @author Joel
  */
 public class gameControl {
+
+    public static void creatNewGame(Player player) {
+        System.out.println("the creat new game fuction was called.");
+    }
     
 }
