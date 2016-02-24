@@ -50,6 +50,7 @@ public class testMenuView {
             
             input = keyboard.nextLine();
             input = input.trim();
+            input = input.toUpperCase();
             if (input.length() >= 2){
                 
                 System.out.println("that is not an option");
@@ -72,7 +73,7 @@ public class testMenuView {
 	                this.askDivisionQuestion();
 	                break;
 	            case 'B':
-	                this.stubFunction2();
+	                this.MuliQuestion();
 	                break;
 	            case 'C':
 	                this.stubFunction3();
@@ -103,6 +104,11 @@ public class testMenuView {
     private void askDivisionQuestion() {
           askDivisionQuestion askDivisionQuestion = new askDivisionQuestion();
            askDivisionQuestion. askDivisionQuestion();
+    }
+
+    private void MuliQuestion() {
+        askMultiQuestion askMultiQuestion = new askMultiQuestion();
+           askMultiQuestion. askQuestion();
     }
 
 }
