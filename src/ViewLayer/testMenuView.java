@@ -5,26 +5,22 @@
  */
 package ViewLayer;
 
-import controlLayer.gameControl;
 import java.util.Scanner;
-import starwarsgame.StarWarsGame;
 
 /**
  *
- * @author MIc
+ * @author Joel
  */
-public class MainMenuView {
-
-    private final String MENU ="\n=====================================================================\n"
-        + "\n N - New Game"
-        + "\n L - Load Saved Game"
-        + "\n S - Save Game"
-        + "\n H - Help Menu"
-        + "\n T - Test Menu"
+public class testMenuView {
+     private final String MENU ="\n=====================================================================\n"
+        + "\n A - askDivisionQuestion"
+        + "\n B - temp2"
+        + "\n C - temp3"
+        + "\n D - temp4"
         + "\n* Q - Quit"
         +"\n=====================================================================\n";
     
-    public void displayMenu() {
+    public void displayTestMenu() {
         
         char selection = ' ';
         do{
@@ -54,7 +50,6 @@ public class MainMenuView {
             
             input = keyboard.nextLine();
             input = input.trim();
-            input = input.toUpperCase();
             if (input.length() >= 2){
                 
                 System.out.println("that is not an option");
@@ -73,20 +68,17 @@ public class MainMenuView {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){
-	            case 'N':
-	                this.startNewGame();
+	            case 'A':
+	                this.askDivisionQuestion();
 	                break;
-	            case 'L':
-	                this.startExistingGame();
+	            case 'B':
+	                this.stubFunction2();
 	                break;
-	            case 'H':
-	                this.displayHelpMenu();
+	            case 'C':
+	                this.stubFunction3();
 	                break;
-	            case 'S':
-	                this.saveGame();
-	                break;
-                    case 'T':
-	                this.displayTestMenu();
+	            case 'D':
+	                this.stubFunction4();
 	                break;
 	            case 'Q':
 	                return;
@@ -96,35 +88,21 @@ public class MainMenuView {
 	        }
     }
 
-    private void startNewGame() {
-        System.out.println("the new game fuction was called.");
-        
-        gameControl.creatNewGame(StarWarsGame.getPlayer());
-        
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-        
+    private void stubFunction2() {
+    System.out.println("stubFunction2 was called");
     }
 
-    private void startExistingGame() {
-        System.out.println("the load game fuction was called.");
+    private void stubFunction3() {
+  System.out.println("stubFunction3 was called");
     }
 
-    private void displayHelpMenu() {
-        System.out.println("the help fuction was called.");
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+    private void stubFunction4() {
+    System.out.println("stubFunction4 was called");
     }
 
-    private void saveGame() {
-        System.out.println("the save game fuction was called.");
+    private void askDivisionQuestion() {
+          askDivisionQuestion askDivisionQuestion = new askDivisionQuestion();
+           askDivisionQuestion. askDivisionQuestion();
     }
 
-    private void displayTestMenu() {
-               testMenuView testMenuView = new testMenuView();
-                testMenuView.displayTestMenu();
-    }
-
-    
 }
