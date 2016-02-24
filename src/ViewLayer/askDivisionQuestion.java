@@ -73,5 +73,6 @@ private final String division1 = "\n"
         }
     private void correctAnswer() {
         System.out.println("\n **** correctAnswer stubFunction here******");
+        return;
     }
 }

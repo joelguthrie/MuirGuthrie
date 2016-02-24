@@ -70,6 +70,7 @@ private final String display = "\n"
         }
     private void correctAnswer() {
         System.out.println("\n **** correctAnswer stubFunction here******");
+        return;
     }
     
 }
