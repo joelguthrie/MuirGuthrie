@@ -53,6 +53,7 @@ public class MainMenuView {
             
             input = keyboard.nextLine();
             input = input.trim();
+            input = input.toUpperCase();
             if (input.length() >= 2){
                 
                 System.out.println("that is not an option");
