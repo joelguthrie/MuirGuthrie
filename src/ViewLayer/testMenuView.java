@@ -11,61 +11,20 @@ import java.util.Scanner;
  *
  * @author Joel
  */
-public class testMenuView {
-     private final String MENU ="\n=====================================================================\n"
+public class testMenuView extends View{
+     
+    public testMenuView(){
+         super("\n=====================================================================\n"
         + "\n A - askDivisionQuestion"
-        + "\n B - temp2"
+        + "\n B - askMuliQuestion"
         + "\n C - temp3"
         + "\n D - temp4"
         + "\n* Q - Quit"
-        +"\n=====================================================================\n";
+        +"\n=====================================================================\n");
+     }
     
-    public void displayTestMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        }while (selection != 'Q');
-        
-    }
-
-    
-                
-
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!valid){
-            
-            System.out.println("what do you want to do:");
-            
-            input = keyboard.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-            if (input.length() >= 2){
-                
-                System.out.println("that is not an option");
-                continue;
-                
-            }
-            
-            break;
-            
-        }
-        
-        return input;
-    }
-
-    private void doAction(char selection) {
+    @Override
+    public void doAction(char selection) {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){
