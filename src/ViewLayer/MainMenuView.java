@@ -13,63 +13,21 @@ import starwarsgame.StarWarsGame;
  *
  * @author MIc
  */
-public class MainMenuView {
+public class MainMenuView extends View{
 
-    private final String MENU ="\n=====================================================================\n"
+    public MainMenuView(){
+     super("\n=====================================================================\n"
         + "\n N - New Game"
         + "\n L - Load Saved Game"
         + "\n S - Save Game"
         + "\n H - Help Menu"
         + "\n T - Test Menu"
         + "\n* Q - Quit"
-        +"\n=====================================================================\n";
-    
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        }while (selection != 'Q');
-        
+        +"\n=====================================================================\n");
     }
-
     
-                
-
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!valid){
-            
-            System.out.println("what do you want to do:");
-            
-            input = keyboard.nextLine();
-            input = input.trim();
-            input = input.toUpperCase();
-            if (input.length() >= 2){
-                
-                System.out.println("that is not an option");
-                continue;
-                
-            }
-            
-            break;
-            
-        }
-        
-        return input;
-    }
-
-    private void doAction(char selection) {
+    @Override
+    public void doAction(char selection) {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){
