@@ -72,7 +72,7 @@ public class MainMenuView extends View{
     private void displayHelpMenu() {
         System.out.println("the help fuction was called.");
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {

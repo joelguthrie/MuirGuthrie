@@ -13,9 +13,9 @@ import starwarsgame.StarWarsGame;
  *
  * @author MIc
  */
-public class MovePlanetView {
-    
-    private final String MENU ="\n=====================================================================\n"
+public class MovePlanetView extends View{
+    public MovePlanetView(){
+    super ("\n=====================================================================\n"
         + "\n H - Hoth"
         + "\n M - Mustafar"
         + "\n A - Alderan"
@@ -23,53 +23,10 @@ public class MovePlanetView {
         + "\n D - Death Star"
         + "\n S - Star Killer"
         + "\n* E - exit ship"	
-        +"\n=====================================================================\n";
-    
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        }while (selection != 'Q');
-        
+        +"\n=====================================================================\n");
     }
-
-    
-                
-
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!valid){
-            
-            System.out.println("What planet do you wnat to travl to: ");
-            
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() >= 2){
-                
-                System.out.println("that is not an option");
-                continue;
-                
-            }
-            
-            break;
-            
-        }
-        
-        return input;
-    }
-
-    private void doAction(char selection) {
+   
+    public void doAction(char selection) {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){

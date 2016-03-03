@@ -11,61 +11,18 @@ import java.util.Scanner;
  *
  * @author MIc
  */
-public class HelpMenuView {
-    
-    private final String MENU ="\n=====================================================================\n"
+public class HelpMenuView extends View {
+    public HelpMenuView(){
+    super ( "\n=====================================================================\n"
         + "\n M - How to move through the galaxy"
         + "\n F - Help finding the lightsaber"
         + "\n W - What do i need?"
         + "\n H - How do i win?"
         + "\n E - Exit"
-        +"\n=====================================================================\n";
-    
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        }while (selection != 'E');
-        
+        +"\n=====================================================================\n");
     }
-
-    
-                
-
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!valid){
-            
-            System.out.println("what do you want to do:");
-            
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() >= 2){
-                
-                System.out.println("that is not an option");
-                continue;
-                
-            }
-            
-            break;
-            
-        }
-        
-        return input;
-    }
-
-    private void doAction(char selection) {
+    @Override
+    public void doAction(char selection) {
         
         selection = Character.toUpperCase(selection);
 	        switch (selection){
