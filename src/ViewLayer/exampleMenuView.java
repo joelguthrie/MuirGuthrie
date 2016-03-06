@@ -5,21 +5,20 @@
  */
 package ViewLayer;
 
-import java.util.Scanner;
-
 /**
  *
- * @author Joel
+ * @author MIc
  */
-public class testMenuView extends View{
-     
-    public testMenuView(){
+public class exampleMenuView extends View{
+    
+     public exampleMenuView(){
          super("\n=====================================================================\n"
-        + "\n A - askDivisionQuestion"
-        + "\n B - askMuliQuestion"
+        + "\n A - temp1"
+        + "\n B - temp2"
         + "\n C - temp3"
         + "\n D - temp4"
-        + "\n* E - Exit"
+        + "\n W - what is this?" 
+        + "\n*E - Exit"
         +"\n=====================================================================\n");
      }
     
@@ -29,16 +28,19 @@ public class testMenuView extends View{
         selection = Character.toUpperCase(selection);
 	        switch (selection){
 	            case 'A':
-	                this.askDivisionQuestion();
+	                this.stubFunction1();
 	                break;
 	            case 'B':
-	                this.MuliQuestion();
+	                this.stubFunction2();
 	                break;
 	            case 'C':
 	                this.stubFunction3();
 	                break;
 	            case 'D':
 	                this.stubFunction4();
+	                break;
+                    case 'W':
+	                this.stubFunction5();
 	                break;
 	            case 'E':
 	                return;
@@ -48,22 +50,24 @@ public class testMenuView extends View{
 	        }
     }
 
+    private void stubFunction1() {
+    System.out.println("This is were you would call the first menu Item");
+    }
+    
+    private void stubFunction2() {
+    System.out.println("this is were you would call the sencond menu Item");
+    }    
+        
     private void stubFunction3() {
-  System.out.println("stubFunction3 was called");
+  System.out.println("This is were you would call the third menu Item");
     }
 
     private void stubFunction4() {
-    System.out.println("stubFunction4 was called");
+    System.out.println("this is were you would call the fourth menu item");
     }
-
-    private void askDivisionQuestion() {
-          askDivisionQuestion askDivisionQuestion = new askDivisionQuestion();
-           askDivisionQuestion. askDivisionQuestion();
-    }
-
-    private void MuliQuestion() {
-        askMultiQuestion askMultiQuestion = new askMultiQuestion();
-           askMultiQuestion. askQuestion();
+    
+    private void stubFunction5() {
+    System.out.println("this is so we can copy and paste this into other menu view classes if we need to make more menus as we build the game.");
     }
 
 }
