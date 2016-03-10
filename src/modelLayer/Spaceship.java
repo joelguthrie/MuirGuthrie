@@ -9,20 +9,11 @@ import java.io.Serializable;
 
 /**
  *
- * @author MIc
+ * @author Joel
  */
-public class LightsaberPartsModel implements Serializable{
+public class Spaceship implements Serializable {
     
-    //varables
     private String description;
-    private String item;
-    
-   
-
-    public LightsaberPartsModel(String description, String item) {
-        this.description = description;
-        this.item = item;
-    }
 
     public String getDescription() {
         return description;
@@ -32,12 +23,8 @@ public class LightsaberPartsModel implements Serializable{
         this.description = description;
     }
 
-    public String getItem() {
-        return item;
-    }
-
-    public void setItem(String item) {
-        this.item = item;
+    public Spaceship(String description) {
+        this.description = description;
     }
     
     
