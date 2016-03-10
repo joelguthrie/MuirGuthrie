@@ -6,29 +6,49 @@
 package modelLayer;
 
 import java.io.Serializable;
+import javax.tools.DocumentationTool.Location;
 
 /**
  *
  * @author Joel
  */
-public class MapModel implements Serializable {
+public class Map implements Serializable {
     
     public String planet;
     
     public double rowCount;
     
     public double columnCount;
+    private Location[][] locations;
     
     // constructor function for three above variables
-    public MapModel(String planet, double rowCount, double columnCount) {
+    public Map(String planet, double rowCount, double columnCount) {
         this.planet = planet;
         this.rowCount = rowCount;
         this.columnCount = columnCount;
     }
     // getter and setter functions for the three variables
 
-    public MapModel(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map(int rowCount, int columnCount) {
+       if (rowCount < 1 || columnCount < 1){
+           System.out.println("The number of rows and columns must be > zero");
+                   return;}
+
+       this.rowCount = rowCount;
+       this.columnCount = columnCount;
+       
+       this.locations = new Location[rowCount][columnCount];
+
+       for (int row = 0; row < rowCount; row++){
+           for(int col = 0; col < columnCount; col++){
+               Location location = new Location();
+               location.setColumn(col);
+               location.setRow(row);
+               location.setVisited(false);
+               
+               locations[row][col] = location;
+           }
+       }
     }
     
     public String getPlanet() {

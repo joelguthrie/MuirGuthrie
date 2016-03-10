@@ -8,7 +8,6 @@ package controlLayer;
 import java.util.Map;
 import modelLayer.Game;
 import modelLayer.ItemInvetoryModel;
-import modelLayer.MapModel;
 import modelLayer.Player;
 import modelLayer.Spaceship;
 import starwarsgame.StarWarsGame;
@@ -31,7 +30,7 @@ public class gameControl {
        Spaceship spaceship = new Spaceship();
        game.setSpaceship(spaceship);
        
-       MapModel map = mapControl.createMap();
+       Map map = mapControl.createMap();
        game.setMap(map);
        
        

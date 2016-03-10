@@ -7,7 +7,8 @@ package controlLayer;
 
 import java.util.Map;
 import javafx.scene.Scene;
-import modelLayer.MapModel;
+import modelLayer.Game;
+import starwarsgame.StarWarsGame;
 
 /**
  *
@@ -15,8 +16,8 @@ import modelLayer.MapModel;
  */
 public class mapControl {
 
-    public static MapModel createMap() {
-      MapModel map = new MapModel (5,5);
+    public static Map createMap() {
+      Map map = new Map(5,5);
       
       Scene[] scenes = createScenes();
       
@@ -26,13 +27,40 @@ public class mapControl {
       
     }
 
+    public enum SceneType {
+        start,
+        spaceship,
+        forcegame,
+        endboss,
+        finish;
+    }
+    
     private static Scene[] createScenes() {
-               System.out.println("the createscenes fuction was called.");
-               return null;
+              Game game = StarWarsGame.getCurrentGame;
+              
+              Scene[] scenes = new Scene[SceneType.values().length];
+              
+              Scene startingScene = new Scene();
+              startingScene.setDescription(
+              "\nAnd now we do the starting scene!");
+              startingScene.setMapSymbol("ST");
+              startingScene.setBlocked(false);
+              startingScene.setTravelTime(240);
+              scenes[SceneType.start.ordinal()] = startingScene;
+        
+              Scene finishScene = new Scene();
+              finishScene.setDescription(
+              "\nAnd now we do the finish scene!");
+              finishScene.setMapSymbol("ST");
+              finishScene.setBlocked(false);
+              finishScene.setTravelTime(240);
+              scenes[SceneType.finish.ordinal()] = startingScene;
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-                System.out.println("the assignScenestolocation fuction was called.");
+      location[0][0].setScene(scenes[SceneType.start.ordinal()]);
+      location[5][5].setScene(scenes[SceneType.finish.ordinal()]);
+
     }
     
 }

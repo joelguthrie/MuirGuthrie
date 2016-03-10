@@ -15,6 +15,8 @@ import modelLayer.Player;
  */
 public class StarWarsGame {
 
+    public static Game getCurrentGame;
+
     public static Game getCurrentGame() {
         return currentGame;
     }
