@@ -6,6 +6,7 @@
 package modelLayer;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  *
@@ -22,10 +23,14 @@ public class Game implements Serializable{
     private Crystal crystal;
     private Hilt hilt;
 
-
+    private ItemInvetoryModel[] inventory;
             
     public Game(double totalTime) {
         this.totalTime = totalTime;
+    }
+
+    public Game() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getTotalTime() {
@@ -63,6 +68,22 @@ public class Game implements Serializable{
 
     public Hilt getHilt() {
         return hilt;
+    }
+
+    public ItemInvetoryModel[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ItemInvetoryModel[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

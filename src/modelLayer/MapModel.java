@@ -26,6 +26,10 @@ public class MapModel implements Serializable {
         this.columnCount = columnCount;
     }
     // getter and setter functions for the three variables
+
+    public MapModel(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String getPlanet() {
         return planet;

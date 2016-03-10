@@ -54,9 +54,7 @@ public class MainMenuView extends View{
 	        }
     }
 
-    private void startNewGame() {
-        System.out.println("the new game fuction was called.");
-        
+    private void startNewGame() {        
         gameControl.creatNewGame(StarWarsGame.getPlayer());
         
         
