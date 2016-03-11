@@ -6,7 +6,6 @@
 package modelLayer;
 
 import java.io.Serializable;
-import javax.tools.DocumentationTool.Location;
 
 /**
  *
@@ -16,39 +15,48 @@ public class Map implements Serializable {
     
     public String planet;
     
-    public double rowCount;
+    public static int rowCount = 10;
     
-    public double columnCount;
-    private Location[][] locations;
+    public static int columnCount = 10;
+    public Location[][] loc;
     
-    // constructor function for three above variables
-    public Map(String planet, double rowCount, double columnCount) {
-        this.planet = planet;
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
-    }
-    // getter and setter functions for the three variables
 
     public Map(int rowCount, int columnCount) {
-       if (rowCount < 1 || columnCount < 1){
-           System.out.println("The number of rows and columns must be > zero");
-                   return;}
+ 
+               loc = new Location[rowCount][columnCount];
+               init();
+    }
 
-       this.rowCount = rowCount;
-       this.columnCount = columnCount;
-       
-       this.locations = new Location[rowCount][columnCount];
-
+    public Map() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public void init(){
        for (int row = 0; row < rowCount; row++){
-           for(int col = 0; col < columnCount; col++){
+           for(int col = 0; col < columnCount; col++) {
                Location location = new Location();
-               location.setColumn(col);
-               location.setRow(row);
-               location.setVisited(false);
                
-               locations[row][col] = location;
+               location.setType(LocationType.values()[(int) (Math.random() * LocationType.values().length)]);
+               loc[row][col] = location;
            }
        }
+    }
+    
+    public String getMapString() {
+        
+        String rtn = "";
+        
+        for (int row = 0; row < rowCount; row++){
+           for(int col = 0; col < columnCount; col++) { 
+                  rtn += loc[row][col].getType().name().charAt(0) + "\t";
+              
+           }
+           rtn += "\n";
+    }
+        return rtn;
+    }
+    
+    public Location getLocation(int row, int col){
+        return loc[row][col];
     }
     
     public String getPlanet() {
@@ -63,7 +71,7 @@ public class Map implements Serializable {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
@@ -71,7 +79,7 @@ public class Map implements Serializable {
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
     

@@ -23,7 +23,7 @@ public class ItemInvetoryModel implements Serializable{
     }
 
     public ItemInvetoryModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
     public String getType() {
@@ -43,15 +43,15 @@ public class ItemInvetoryModel implements Serializable{
     }
 
     public void setDescription(String emittter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
     }
 
     public void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     public void setRequiredAmount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
     
     

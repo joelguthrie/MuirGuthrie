@@ -5,6 +5,8 @@
  */
 package controlLayer;
 
+import modelLayer.Game;
+import modelLayer.Map;
 import modelLayer.Player;
 import starwarsgame.StarWarsGame;
 
@@ -27,5 +29,15 @@ public class ProgramControl {
             
     }
  
-    
-}
+    public static void createNewGame(Player player){
+        Game g = new Game();
+        g.setPlayer(player);
+        
+        Map gameMap = new Map();
+        g.setMap(gameMap);
+        
+        player.setLocation(gameMap.getLocation(0, 0));
+        
+        StarWarsGame.setGame(g);
+    }
+ 

@@ -5,9 +5,11 @@
  */
 package controlLayer;
 
-import java.util.Map;
-import javafx.scene.Scene;
+
+
 import modelLayer.Game;
+import modelLayer.Location;
+import modelLayer.Map;
 import starwarsgame.StarWarsGame;
 
 /**
@@ -55,11 +57,11 @@ public class mapControl {
               finishScene.setBlocked(false);
               finishScene.setTravelTime(240);
               scenes[SceneType.finish.ordinal()] = startingScene;
+    return scenes;
     }
-
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
       location[0][0].setScene(scenes[SceneType.start.ordinal()]);
-      location[5][5].setScene(scenes[SceneType.finish.ordinal()]);
+      Location[5][5].setScene(scenes[SceneType.finish.ordinal()]);
 
     }
     

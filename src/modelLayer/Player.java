@@ -51,6 +51,10 @@ public class Player implements Serializable{
     public void setInventory(String inventory) {
         this.inventory = inventory;
     }
+
+    public void setLocation(Location location) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

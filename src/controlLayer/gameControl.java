@@ -30,7 +30,7 @@ public class gameControl {
        Spaceship spaceship = new Spaceship();
        game.setSpaceship(spaceship);
        
-       Map map = mapControl.createMap();
+        modelLayer.Map map = mapControl.createMap();
        game.setMap(map);
        
        

@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Joel
  */
-public class LocationModel implements Serializable{
+public class Location implements Serializable{
     
     public double row;
     
@@ -21,10 +21,14 @@ public class LocationModel implements Serializable{
 
     // constructor functions for the three variables
 
-    public LocationModel(double row, double column, double visited) {
+    public Location(double row, double column, double visited) {
         this.row = row;
         this.column = column;
         this.visited = visited;
+    }
+
+    Location() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     // getter and setter functions
@@ -51,6 +55,14 @@ public class LocationModel implements Serializable{
 
     public void setVisited(double visited) {
         this.visited = visited;
+    }
+
+    void setType(LocationType value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Object getType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
