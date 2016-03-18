@@ -15,27 +15,8 @@ import modelLayer.Player;
  */
 public class StarWarsGame {
 
-    public static Game getCurrentGame;
-
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
-
-    public static void setCurrentGame(Game currentGame) {
-        StarWarsGame.currentGame = currentGame;
-    }
-
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        StarWarsGame.player = player;
-    }
-
-    private static Game currentGame = null;
-    
-    private static Player player = null;
+    public static Game game;
+    private static Player player;
     
     /**
      * @param args the command line arguments
@@ -46,13 +27,19 @@ public class StarWarsGame {
         startProgramView.startProgram();
     }
 
-    public static void setGame(Game g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Game getGame() {
+        return game;
     }
 
-    public static Object getGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void setGame(Game game) {
+        StarWarsGame.game = game;
     }
-    
 
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        StarWarsGame.player = player;
+    }
 }

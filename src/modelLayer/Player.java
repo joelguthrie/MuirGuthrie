@@ -14,15 +14,17 @@ import java.io.Serializable;
 public class Player implements Serializable{
     
     //varables
-    private double coordinates;
+    private Location location;
     private String inventory;
+    private String name;
 
-    public Player(double coordinates, String inventory) {
-        this.coordinates = coordinates;
+    public Player(String inventory) {
         this.inventory = inventory;
     }
-
-    private String name;
+    
+    public Player() {
+        
+    }
 
     public String getName() {
         return name;
@@ -30,18 +32,6 @@ public class Player implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-    }
-    
-    public Player() {
-        
-    }
-
-    public double getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(double coordinates) {
-        this.coordinates = coordinates;
     }
 
     public String getInventory() {
@@ -52,10 +42,11 @@ public class Player implements Serializable{
         this.inventory = inventory;
     }
 
-    public void setLocation(Location location) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Location getLocation() {
+        return location;
     }
-    
-    
-    
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 }

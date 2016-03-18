@@ -8,6 +8,7 @@ package ViewLayer;
 import controlLayer.ProgramControl;
 import java.util.Scanner;
 import modelLayer.Player;
+import starwarsgame.StarWarsGame;
 
 /**
  *
@@ -25,6 +26,7 @@ public class startProgramView {
         
         //make a new player
         Player player = ProgramControl.createPlayer(playersName);
+        StarWarsGame.setPlayer(player);
         
         //display the welcome message
         this.displayWelcomeMessage(player);

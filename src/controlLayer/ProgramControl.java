@@ -17,27 +17,28 @@ import starwarsgame.StarWarsGame;
 public class ProgramControl {
 
     public static Player createPlayer(String name) {
-            
-            if (name == null){
-                return null;
-            }
-            Player player = new Player();
-            player.setName(name);
-            
-            StarWarsGame.setPlayer(player);
-            return player;
-            
+
+        if (name == null) {
+            return null;
+        }
+        Player player = new Player();
+        player.setName(name);
+
+        StarWarsGame.setPlayer(player);
+        return player;
+
     }
- 
-    public static void createNewGame(Player player){
+
+    public static void createNewGame(Player player) {
         Game g = new Game();
         g.setPlayer(player);
-        
+
         Map gameMap = new Map();
         g.setMap(gameMap);
-        
+
         player.setLocation(gameMap.getLocation(0, 0));
-        
+
         StarWarsGame.setGame(g);
     }
- 
+}
+    

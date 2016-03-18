@@ -19,63 +19,58 @@ import starwarsgame.StarWarsGame;
 public class gameControl {
 
     public static void creatNewGame(Player player) {
-       Game game = new Game();
-       StarWarsGame.setCurrentGame(game);
-       
-       game.setPlayer(player);
-       
-       ItemInvetoryModel[] inventoryList = gameControl.createInventoryList();
-       game.setInventory(inventoryList);
-       
-       Spaceship spaceship = new Spaceship();
-       game.setSpaceship(spaceship);
-       
+        Game game = new Game();
+        StarWarsGame.setGame(game);
+
+        game.setPlayer(player);
+
+        ItemInvetoryModel[] inventoryList = gameControl.createInventoryList();
+        game.setInventory(inventoryList);
+
+        Spaceship spaceship = new Spaceship();
+        game.setSpaceship(spaceship);
+
         modelLayer.Map map = mapControl.createMap();
-       game.setMap(map);
-       
-       
-       
-       
-       
-       
+        game.setMap(map);
+
     }
-       public enum Item {
+
+    public enum Item {
         emitter,
         body,
         crystal,
         hilt;
-        }
-       
-    private static ItemInvetoryModel[] createInventoryList() {
-        
- 
-                ItemInvetoryModel[] inventory = new ItemInvetoryModel[3];
-                
-                ItemInvetoryModel emitter = new ItemInvetoryModel();
-                emitter.setDescription("emittter");
-                emitter.setQuantityInStock(0);
-                emitter.setRequiredAmount(1);
-                inventory[Item.emitter.ordinal()] = emitter;
-                
-                ItemInvetoryModel body = new ItemInvetoryModel();
-                body.setDescription("body");
-                body.setQuantityInStock(0);
-                body.setRequiredAmount(1);
-                inventory[Item.body.ordinal()] = body;
-                
-                ItemInvetoryModel crystal = new ItemInvetoryModel();
-                crystal.setDescription("crystal");
-                crystal.setQuantityInStock(0);
-                crystal.setRequiredAmount(1);
-                inventory[Item.crystal.ordinal()] = crystal;
-                
-                ItemInvetoryModel hilt = new ItemInvetoryModel();
-                hilt.setDescription("hilt");
-                hilt.setQuantityInStock(0);
-                hilt.setRequiredAmount(1);
-                inventory[Item.hilt.ordinal()] = hilt;
-                
-                return inventory;
     }
-    
+
+    private static ItemInvetoryModel[] createInventoryList() {
+
+        ItemInvetoryModel[] inventory = new ItemInvetoryModel[3];
+
+        ItemInvetoryModel emitter = new ItemInvetoryModel();
+        emitter.setDescription("emittter");
+        emitter.setQuantityInStock(0);
+        emitter.setRequiredAmount(1);
+        inventory[Item.emitter.ordinal()] = emitter;
+
+        ItemInvetoryModel body = new ItemInvetoryModel();
+        body.setDescription("body");
+        body.setQuantityInStock(0);
+        body.setRequiredAmount(1);
+        inventory[Item.body.ordinal()] = body;
+
+        ItemInvetoryModel crystal = new ItemInvetoryModel();
+        crystal.setDescription("crystal");
+        crystal.setQuantityInStock(0);
+        crystal.setRequiredAmount(1);
+        inventory[Item.crystal.ordinal()] = crystal;
+
+        ItemInvetoryModel hilt = new ItemInvetoryModel();
+        hilt.setDescription("hilt");
+        hilt.setQuantityInStock(0);
+        hilt.setRequiredAmount(1);
+        inventory[Item.hilt.ordinal()] = hilt;
+
+        return inventory;
+    }
+
 }

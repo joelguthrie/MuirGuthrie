@@ -5,6 +5,7 @@
  */
 package ViewLayer;
 
+import controlLayer.ProgramControl;
 import controlLayer.gameControl;
 import java.util.Scanner;
 import starwarsgame.StarWarsGame;
@@ -55,12 +56,10 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {        
-        gameControl.creatNewGame(StarWarsGame.getPlayer());
-        
+        ProgramControl.createNewGame(StarWarsGame.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-        
     }
 
     private void startExistingGame() {
