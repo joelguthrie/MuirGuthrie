@@ -22,6 +22,7 @@ public class Game implements Serializable{
     private Crystal crystal;
     private Hilt hilt;
     
+    private Map[] planets;
     private Map map;
     private Player player;
 
@@ -94,6 +95,14 @@ public class Game implements Serializable{
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public Map[] getPlanets() {
+        return planets;
+    }
+
+    public void setPlanets(Map[] planets) {
+        this.planets = planets;
     }
     
 }

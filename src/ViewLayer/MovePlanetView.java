@@ -13,43 +13,46 @@ import starwarsgame.StarWarsGame;
  *
  * @author MIc
  */
-public class MovePlanetView extends View{
-    public MovePlanetView(){
-    super ("\n=====================================================================\n"
-        + "\n H - Hoth"
-        + "\n M - Mustafar"
-        + "\n A - Alderan"
-        + "\n D - Death Star"
-        + "\n D - Death Star"
-        + "\n S - Star Killer"
-        + "\n* E - exit ship"	
-        +"\n=====================================================================\n");
+public class MovePlanetView extends View {
+
+    public MovePlanetView() {
+        super("\n=====================================================================\n"
+                + "\n H - Hoth"
+                + "\n M - Mustafar"
+                + "\n A - Alderan"
+                + "\n D - Death Star"
+                + "\n D - Death Star"
+                + "\n S - Star Killer"
+                + "\n* E - exit ship"
+                + "\n=====================================================================\n");
     }
-   
-    public void doAction(char selection) {
-        
+
+    public boolean doAction(char selection) {
+
         selection = Character.toUpperCase(selection);
-	        switch (selection){
-	            case 'H':
-	                this.ToHoth();
-	                break;
-	            case 'M':
-	                this.ToMustafar();
-	                break;
-	            case 'A':
-	                this.ToAleran();
-	                break;
-	            case 'D':
-	                this.ToDeathStar();
-	                break;
-	            case 'S':
-                        this.ToStarKiller();
-                    case 'E':
-	                return;
-	            default:
-	                System.out.println("\n **** Invalid Choice. Choose another ******");
-	                break;
-	        }
+        switch (selection) {
+            case 'H':
+                this.ToHoth();
+                break;
+            case 'M':
+                this.ToMustafar();
+                break;
+            case 'A':
+                this.ToAleran();
+                break;
+            case 'D':
+                this.ToDeathStar();
+                break;
+            case 'S':
+                this.ToStarKiller();
+            case 'E':
+                return true;
+            default:
+                System.out.println("\n **** Invalid Choice. Choose another ******");
+                break;
+        }
+        
+        return true;
     }
 
     private void ToHoth() {
@@ -72,6 +75,4 @@ public class MovePlanetView extends View{
         System.out.println("\nYou are now getting ready to go to Star Killer Planet");
     }
 
-    
-    
 }

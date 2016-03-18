@@ -33,10 +33,22 @@ public class ProgramControl {
         Game g = new Game();
         g.setPlayer(player);
 
-        Map gameMap = new Map();
-        g.setMap(gameMap);
+        Map hoth = new Map();
+        g.setMap(hoth);
 
-        player.setLocation(gameMap.getLocation(0, 0));
+        Map tatooine = new Map();
+        
+        Map naboo = new Map();
+        
+        Map[] planets = new Map[3];
+        
+        planets[0] = hoth;
+        planets[1] = tatooine;
+        planets[2] = naboo;
+        
+        g.setPlanets(planets);
+        
+        player.setLocation(hoth.getLocation(0, 0));
 
         StarWarsGame.setGame(g);
     }

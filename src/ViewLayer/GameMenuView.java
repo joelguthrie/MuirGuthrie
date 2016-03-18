@@ -29,47 +29,56 @@ public class GameMenuView extends View {
     }
 
     @Override
-    public void doAction(char selection) {
+    public boolean doAction(char selection) {
         selection = Character.toUpperCase(selection);
         switch (selection) {
             case 'N':
-                this.MoveNorth();
+                this.moveNorth();
                 break;
             case 'S':
-                this.MoveSouth();
+                this.moveSouth();
                 break;
+            case 'T':
+                this.movePlanet();
             case 'E':
-                this.MoveEast();
+                this.moveEast();
                 break;
             case 'W':
-                this.MoveWest();
+                this.moveWest();
                 break;
             case 'M':
                 this.viewMap();
                 break;
             case 'Q':
-                break;
+                return true;
             case 'H':
                 break;
             default:
                 System.out.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
+        
+        return false;
     }
 
-    private void MoveNorth() {
+    private void movePlanet() {
+        PlanetMoveView pmv = new PlanetMoveView();
+        pmv.display();
+    }
+    
+    private void moveNorth() {
         System.out.println("the stub  fuction was called.");
     }
 
-    private void MoveSouth() {
+    private void moveSouth() {
         System.out.println("the stub  fuction was called.");
     }
 
-    private void MoveEast() {
+    private void moveEast() {
         System.out.println("the stub  fuction was called.");
     }
 
-    private void MoveWest() {
+    private void moveWest() {
         System.out.println("the stub  fuction was called.");
     }
 

@@ -13,6 +13,6 @@ public interface ViewInterface {
     
     public void display();
     public String getInput();
-    public void doAction(char selection);
+    public boolean doAction(char selection);
     
 }

@@ -14,50 +14,52 @@ import starwarsgame.StarWarsGame;
  *
  * @author MIc
  */
-public class MainMenuView extends View{
+public class MainMenuView extends View {
 
-    public MainMenuView(){
-     super("\n=====================================================================\n"
-        + "\n N - New Game"
-        + "\n L - Load Saved Game"
-        + "\n S - Save Game"
-        + "\n H - Help Menu"
-        + "\n T - Test Menu"
-        + "\n* Q - Quit"
-        +"\n=====================================================================\n");
+    public MainMenuView() {
+        super("\n=====================================================================\n"
+                + "\n N - New Game"
+                + "\n L - Load Saved Game"
+                + "\n S - Save Game"
+                + "\n H - Help Menu"
+                + "\n T - Test Menu"
+                + "\n* Q - Quit"
+                + "\n=====================================================================\n");
     }
-    
+
     @Override
-    public void doAction(char selection) {
-        
+    public boolean doAction(char selection) {
+
         selection = Character.toUpperCase(selection);
-	        switch (selection){
-	            case 'N':
-	                this.startNewGame();
-	                break;
-	            case 'L':
-	                this.startExistingGame();
-	                break;
-	            case 'H':
-	                this.displayHelpMenu();
-	                break;
-	            case 'S':
-	                this.saveGame();
-	                break;
-                    case 'T':
-	                this.displayTestMenu();
-	                break;
-	            case 'Q':
-	                return;
-	            default:
-	                System.out.println("\n **** Invalid Choice. Choose another ******");
-	                break;
-	        }
+        switch (selection) {
+            case 'N':
+                this.startNewGame();
+                break;
+            case 'L':
+                this.startExistingGame();
+                break;
+            case 'H':
+                this.displayHelpMenu();
+                break;
+            case 'S':
+                this.saveGame();
+                break;
+            case 'T':
+                this.displayTestMenu();
+                break;
+            case 'Q':
+                return true;
+            default:
+                System.out.println("\n **** Invalid Choice. Choose another ******");
+                break;
+        }
+
+        return false;
     }
 
-    private void startNewGame() {        
+    private void startNewGame() {
         ProgramControl.createNewGame(StarWarsGame.getPlayer());
-        
+
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
@@ -77,9 +79,8 @@ public class MainMenuView extends View{
     }
 
     private void displayTestMenu() {
-               testMenuView testMenuView = new testMenuView();
-                testMenuView.display();
+        testMenuView testMenuView = new testMenuView();
+        testMenuView.display();
     }
 
-    
 }
