@@ -17,6 +17,7 @@ public class Location implements Serializable{
     private double column;
     private boolean visited;
     private LocationType type;
+    private InventoryItem item;
 
     // constructor functions for the three variables
 
@@ -62,4 +63,14 @@ public class Location implements Serializable{
     public void setType(LocationType type) {
         this.type = type;
     }
+
+    public InventoryItem getItem() {
+        return item;
+    }
+
+    public void setItem(InventoryItem item) {
+        this.item = item;
+    }
+    
+    
 }

@@ -52,7 +52,9 @@ public class Map implements Serializable {
 
         for (int row = 0; row < rowCount; row++) {
             for (int col = 0; col < columnCount; col++) {
-                rtn += loc[row][col].getType().name().charAt(0) + "\t";
+                rtn += loc[row][col].getType().name().charAt(0);
+                rtn += loc[row][col].getItem() == null ? "" : loc[row][col].getItem().getType().name().charAt(0);
+                rtn += "\t";
             }
             rtn += "\n";
         }

@@ -6,6 +6,8 @@
 package modelLayer;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,15 +17,11 @@ public class Player implements Serializable{
     
     //varables
     private Location location;
-    private String inventory;
+    private List<InventoryItem> inventory;
     private String name;
-
-    public Player(String inventory) {
-        this.inventory = inventory;
-    }
     
     public Player() {
-        
+        inventory = new ArrayList<>();
     }
 
     public String getName() {
@@ -33,20 +31,20 @@ public class Player implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(String inventory) {
-        this.inventory = inventory;
-    }
-
+    
     public Location getLocation() {
         return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public List<InventoryItem> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(List<InventoryItem> inventory) {
+        this.inventory = inventory;
     }
 }

@@ -11,27 +11,13 @@ import java.io.Serializable;
  *
  * @author MIc
  */
-public class ItemInvetoryModel implements Serializable{
+public class InventoryItem implements Serializable{
     
     //varables
-    private String type;
+    private ItemType type;
     private int quantity;
 
-    public ItemInvetoryModel(String type, int quantity) {
-        this.type = type;
-        this.quantity = quantity;
-    }
-
-    public ItemInvetoryModel() {
-    
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public InventoryItem() {
     }
 
     public int getQuantity() {
@@ -53,7 +39,13 @@ public class ItemInvetoryModel implements Serializable{
     public void setRequiredAmount(int i) {
       
     }
-    
-    
+
+    public ItemType getType() {
+        return type;
+    }
+
+    public void setType(ItemType type) {
+        this.type = type;
+    }
     
 }

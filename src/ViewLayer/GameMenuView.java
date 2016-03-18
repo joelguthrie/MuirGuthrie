@@ -24,7 +24,7 @@ public class GameMenuView extends View {
                 + "\n M - Map"
                 + "\n H - Help Menu"
                 + "\n S - Save Game"
-                + "\n E - Exit"
+                + "\n Q - Quit"
                 + "\n=====================================================================\n");
     }
 
