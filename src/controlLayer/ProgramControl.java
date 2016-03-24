@@ -5,6 +5,11 @@
  */
 package controlLayer;
 
+import ViewLayer.ErrorView;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Random;
 import modelLayer.Game;
 import modelLayer.InventoryItem;
@@ -57,6 +62,33 @@ public class ProgramControl {
         player.setLocation(hoth.getLocation(0, 0));
 
         StarWarsGame.setGame(g);
+    }
+    
+    public static void saveGame(String filePath) {
+        try{
+            FileOutputStream fos = new FileOutputStream(filePath); 
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(StarWarsGame.getGame());
+        } catch (Exception e) {
+            ErrorView.display("ProgramControl", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public static void loadGame(String filePath){
+        Game game = null;
+        try{
+            FileInputStream fis = new FileInputStream(filePath); 
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            game = (Game)ois.readObject();
+            StarWarsGame.setGame(game);
+            StarWarsGame.setPlayer(game.getPlayer());
+        } catch (Exception e) {
+            ErrorView.display("ProgramControl", e.getMessage());
+            e.printStackTrace();
+        }
     }
     
     private static void createAndPlaceItems(Map[] planets) {

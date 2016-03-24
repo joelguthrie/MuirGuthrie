@@ -29,21 +29,21 @@ public class HelpMenuView extends View {
         selection = Character.toUpperCase(selection);
         switch (selection) {
             case 'M':
-                System.out.println("display the move info");
+                console.println("display the move info");
                 break;
             case 'F':
-                System.out.println("showing help Lightsaber");
+                console.println("showing help Lightsaber");
                 break;
             case 'W':
-                System.out.println("show what you need");
+                console.println("show what you need");
                 break;
             case 'H':
-                System.out.println("Show How you win the game");
+                console.println("Show How you win the game");
                 break;
             case 'E':
                 return true;
             default:
-                System.out.println("\n **** Invalid Choice. Choose another ******");
+                console.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
 

@@ -5,7 +5,10 @@
  */
 package ViewLayer;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import starwarsgame.StarWarsGame;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+    
+    protected PrintWriter console = StarWarsGame.getOutFile();
+    protected BufferedReader keyboard = StarWarsGame.getInFile();
 
     public View() {
 
@@ -29,7 +35,7 @@ public abstract class View implements ViewInterface {
         boolean stop;
         do {
 
-            System.out.println(this.displayMessage);
+            console.println(this.displayMessage);
 
             String input = this.getInput();
             selection = input.charAt(0);
@@ -41,21 +47,23 @@ public abstract class View implements ViewInterface {
     }
 
     @Override
-    public String getInput() {
+    public String getInput(){
         boolean valid = false;
         String input = null;
-        Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
 
-            System.out.println("what do you want to do:");
-
-            input = keyboard.nextLine();
+            console.println("what do you want to do:");
+            try {
+                input = keyboard.readLine();
+            } catch (Exception e){
+                throw new RuntimeException("error reading input");
+            }
             input = input.trim();
             input = input.toUpperCase();
             if (input.length() >= 2) {
 
-                System.out.println("that is not an option");
+                console.println("that is not an option");
                 continue;
 
             }

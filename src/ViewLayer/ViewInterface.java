@@ -12,7 +12,7 @@ package ViewLayer;
 public interface ViewInterface {
     
     public void display();
-    public String getInput();
+    public String getInput() ;
     public boolean doAction(char selection);
     
 }

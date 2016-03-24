@@ -48,7 +48,7 @@ public class MovePlanetView extends View {
             case 'E':
                 return true;
             default:
-                System.out.println("\n **** Invalid Choice. Choose another ******");
+                console.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
         
@@ -56,23 +56,23 @@ public class MovePlanetView extends View {
     }
 
     private void ToHoth() {
-        System.out.println("\nYou are now getting ready to go to Hoth");
+        console.println("\nYou are now getting ready to go to Hoth");
     }
 
     private void ToMustafar() {
-        System.out.println("\nYOu are now getting ready to go to Mustafar");
+        console.println("\nYOu are now getting ready to go to Mustafar");
     }
 
     private void ToAleran() {
-        System.out.println("\nYou are now getting ready to go to Aleran");
+        console.println("\nYou are now getting ready to go to Aleran");
     }
 
     private void ToDeathStar() {
-        System.out.println("\nYou are now getting ready to go to the Death Star");
+        console.println("\nYou are now getting ready to go to the Death Star");
     }
 
     private void ToStarKiller() {
-        System.out.println("\nYou are now getting ready to go to Star Killer Planet");
+        console.println("\nYou are now getting ready to go to Star Killer Planet");
     }
 
 }

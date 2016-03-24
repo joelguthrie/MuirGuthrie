@@ -30,12 +30,12 @@ public class PlanetMoveView extends View {
         try {
             planetIndex = Integer.parseInt(selection + "");
         } catch (Exception e) {
-            System.out.println("Please enter a number");
+            console.println("Please enter a number");
             return false;
         }
         
         if(planetIndex < 0 || planetIndex > StarWarsGame.getGame().getPlanets().length) {
-            System.out.println("Please enter a valid selection");
+            console.println("Please enter a valid selection");
             return false;
         }
         

@@ -6,6 +6,8 @@
 package ViewLayer;
 
 import controlLayer.ProgramControl;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import modelLayer.Player;
 import starwarsgame.StarWarsGame;
@@ -15,6 +17,9 @@ import starwarsgame.StarWarsGame;
  * @author MIc
  */
 public class startProgramView {
+    
+    protected PrintWriter console = StarWarsGame.getOutFile();
+    protected BufferedReader keyboard = StarWarsGame.getInFile();
     
     public void startProgram(){
         
@@ -38,7 +43,7 @@ public class startProgramView {
     }
 
     private void displayBanner() {
-        System.out.println(
+        console.println(
         "=====================================================================\n"
         +"                   8888888888  888    88888\n"
         +"                  88     88   88 88   88  88\n"
@@ -62,17 +67,21 @@ public class startProgramView {
         
         boolean valid = false;
         String playerName = null;
-        Scanner keyboard = new Scanner(System.in);
         
         while (!valid){
             
-            System.out.println("Enter your name:");
+            console.println("Enter your name:");
             
-            playerName = keyboard.nextLine();
+            try {
+            playerName = keyboard.readLine();
+            } catch (Exception e){
+                ErrorView.display(this.getClass().getName(), "error reading input");
+                
+            }
             playerName = playerName.trim();
             if (playerName.length() < 2){
                 
-                System.out.println("name length must be longer then 2 characters, try again.");
+                console.println("name length must be longer then 2 characters, try again.");
                 continue;
                 
             }
@@ -86,13 +95,13 @@ public class startProgramView {
 
     private void displayWelcomeMessage(Player player) {
         
-        System.out.println("=====================================================================\n");
-        System.out.println("              wellcome to the realm of Darth Jar Jar\n");
-        System.out.println("              " + player.getName() + " has been called to defend\n");
-        System.out.println("              the universe from this theret from this\n");
-        System.out.println("              and now you will have to find teachers \n");
-        System.out.println("              to train in the ways of the force.     \n");
-        System.out.println("=====================================================================\n");
+        console.println("=====================================================================\n");
+        console.println("              wellcome to the realm of Darth Jar Jar\n");
+        console.println("              " + player.getName() + " has been called to defend\n");
+        console.println("              the universe from this theret from this\n");
+        console.println("              and now you will have to find teachers \n");
+        console.println("              to train in the ways of the force.     \n");
+        console.println("=====================================================================\n");
     }
     
     

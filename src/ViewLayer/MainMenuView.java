@@ -50,7 +50,7 @@ public class MainMenuView extends View {
             case 'Q':
                 return true;
             default:
-                System.out.println("\n **** Invalid Choice. Choose another ******");
+                console.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
 
@@ -65,17 +65,32 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("the load game fuction was called.");
+        console.println("enter file name:");
+        try{
+            String fileName = keyboard.readLine();
+            ProgramControl.loadGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch(Exception e){
+            ErrorView.display(this.getClass().getName(), "error in loading save game");
+        }
     }
 
     private void displayHelpMenu() {
-        System.out.println("the help fuction was called.");
+        console.println("the help fuction was called.");
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
     private void saveGame() {
-        System.out.println("the save game fuction was called.");
+        console.println("enter file name:");
+        try{
+            String fileName = keyboard.readLine();
+            ProgramControl.saveGame(fileName);
+            console.println("your game was saved");
+        } catch(Exception e){
+            ErrorView.display(this.getClass().getName(), "error when saveing game");
+        }
     }
 
     private void displayTestMenu() {

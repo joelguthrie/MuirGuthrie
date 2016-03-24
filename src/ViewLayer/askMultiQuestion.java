@@ -5,13 +5,19 @@
  */
 package ViewLayer;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import starwarsgame.StarWarsGame;
 
 /**
  *
  * @author MIc
  */
 public class askMultiQuestion {
+    
+    protected PrintWriter console = StarWarsGame.getOutFile();
+    protected BufferedReader keyboard = StarWarsGame.getInFile();
 
     public void askQuestion(){
         displayDivisionProblem();
@@ -40,7 +46,7 @@ private final String display = "\n"
       
     public void displayDivisionProblem() {
         
-            System.out.println(display);
+            console.println(display);
             char selection = ' ';
             int input = this.getInput();
 
@@ -52,7 +58,7 @@ private final String display = "\n"
     
         private Integer getInput() {
            
-                System.out.println("What is the answer?");
+                console.println("What is the answer?");
                 
                 Scanner scan = new Scanner(System.in); 
                 int answer = scan.nextInt(); 
@@ -65,11 +71,11 @@ private final String display = "\n"
                 this.correctAnswer();
 
         else{
-                System.out.println("\n **** Wrong Answer ******");        
+                console.println("\n **** Wrong Answer ******");        
         }
         }
     private void correctAnswer() {
-        System.out.println("\n **** correctAnswer stubFunction here******");
+        console.println("\n **** correctAnswer stubFunction here******");
         return;
     }
     

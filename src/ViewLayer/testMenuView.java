@@ -43,7 +43,7 @@ public class testMenuView extends View {
             case 'E':
                 return true;
             default:
-                System.out.println("\n **** Invalid Choice. Choose another ******");
+                console.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
 
@@ -51,11 +51,11 @@ public class testMenuView extends View {
     }
 
     private void stubFunction3() {
-        System.out.println("stubFunction3 was called");
+        console.println("stubFunction3 was called");
     }
 
     private void stubFunction4() {
-        System.out.println("stubFunction4 was called");
+        console.println("stubFunction4 was called");
     }
 
     private void askDivisionQuestion() {

@@ -54,7 +54,7 @@ public class GameMenuView extends View {
             case 'H':
                 break;
             default:
-                System.out.println("\n **** Invalid Choice. Choose another ******");
+                console.println("\n **** Invalid Choice. Choose another ******");
                 break;
         }
         
@@ -67,23 +67,23 @@ public class GameMenuView extends View {
     }
     
     private void moveNorth() {
-        System.out.println("the stub  fuction was called.");
+        console.println("the stub  fuction was called.");
     }
 
     private void moveSouth() {
-        System.out.println("the stub  fuction was called.");
+        console.println("the stub  fuction was called.");
     }
 
     private void moveEast() {
-        System.out.println("the stub  fuction was called.");
+        console.println("the stub  fuction was called.");
     }
 
     private void moveWest() {
-        System.out.println("the stub  fuction was called.");
+        console.println("the stub  fuction was called.");
     }
 
     private void viewMap() {
-        System.out.println(StarWarsGame.getGame().getMap().getMapString());
+        console.println(StarWarsGame.getGame().getMap().getMapString());
     }
 
 }
