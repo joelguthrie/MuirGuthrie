@@ -30,19 +30,21 @@ public class StarWarsGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        startProgramView startProgramView = new startProgramView();
+        startProgramView startProgramView;
         try {
             
             inFile = new BufferedReader(new InputStreamReader(System.in));
             outFile = new PrintWriter(System.out, true);
             String logPath = "log.txt";
             logFile = new PrintWriter(logPath);
-        
+            startProgramView = new startProgramView();
+            
             startProgramView.startProgram();
             
         } catch (Exception e){
             
             e.printStackTrace();
+            startProgramView = new startProgramView();
             startProgramView.startProgram();
             
         } finally {
