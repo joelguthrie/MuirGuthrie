@@ -5,6 +5,7 @@
  */
 package ViewLayer;
 
+import controlLayer.ProgramControl;
 import java.util.Scanner;
 import starwarsgame.StarWarsGame;
 
@@ -23,7 +24,7 @@ public class GameMenuView extends View {
                 + "\n T - Travel to a different Planet"
                 + "\n M - Map"
                 + "\n H - Help Menu"
-                + "\n S - Save Game"
+                + "\n G - Save Game"
                 + "\n Q - Quit"
                 + "\n=====================================================================\n");
     }
@@ -48,6 +49,9 @@ public class GameMenuView extends View {
                 break;
             case 'M':
                 this.viewMap();
+                break;
+            case 'G':
+                this.save();
                 break;
             case 'Q':
                 return true;
@@ -84,6 +88,17 @@ public class GameMenuView extends View {
 
     private void viewMap() {
         console.println(StarWarsGame.getGame().getMap().getMapString());
+    }
+
+    private void save() {
+        console.println("enter file name:");
+        try{
+            String fileName = keyboard.readLine();
+            ProgramControl.saveGame(fileName);
+            console.println("your game was saved");
+        } catch(Exception e){
+            ErrorView.display(this.getClass().getName(), "error when saveing game");
+        }
     }
 
 }

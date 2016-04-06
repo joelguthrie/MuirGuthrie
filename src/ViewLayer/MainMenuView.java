@@ -82,7 +82,7 @@ public class MainMenuView extends View {
         helpMenu.display();
     }
 
-    private void saveGame() {
+    void saveGame() {
         console.println("enter file name:");
         try{
             String fileName = keyboard.readLine();
